@@ -1,0 +1,56 @@
+## Created with gatsby-plugin-netlify
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+/d79ade25c8be76d6b59317f3a16e698cf21327f6-03957df890ddaa165545.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsx-1bab13f7793f9dab223c.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---cache-caches-gatsby-plugin-offline-app-shell-js-3d2b678c60fd907ea35a.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-404-jsx-f1817c9a8e3bc9bfa29c.js
+  Cache-Control: public, max-age=31536000, immutable
+/webpack-runtime-d999033788a6711a83a1.js
+  Cache-Control: public, max-age=31536000, immutable
+/framework-81209d96cc6775a1491c.js
+  Cache-Control: public, max-age=31536000, immutable
+/app-4a3f3044119ead8dd08d.js
+  Cache-Control: public, max-age=31536000, immutable
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/sw.js
+  Cache-Control: no-cache
+/portfolio/
+  Link: </portfolio/webpack-runtime-d999033788a6711a83a1.js>; rel=preload; as=script
+  Link: </portfolio/framework-81209d96cc6775a1491c.js>; rel=preload; as=script
+  Link: </portfolio/app-4a3f3044119ead8dd08d.js>; rel=preload; as=script
+  Link: </portfolio/d79ade25c8be76d6b59317f3a16e698cf21327f6-03957df890ddaa165545.js>; rel=preload; as=script
+  Link: </portfolio/component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsx-1bab13f7793f9dab223c.js>; rel=preload; as=script
+  Link: </portfolio/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </portfolio/page-data/index/page-data.json>; rel=preload; as=fetch; crossorigin
+/portfolio/offline-plugin-app-shell-fallback/
+  Link: </portfolio/webpack-runtime-d999033788a6711a83a1.js>; rel=preload; as=script
+  Link: </portfolio/framework-81209d96cc6775a1491c.js>; rel=preload; as=script
+  Link: </portfolio/app-4a3f3044119ead8dd08d.js>; rel=preload; as=script
+  Link: </portfolio/component---cache-caches-gatsby-plugin-offline-app-shell-js-3d2b678c60fd907ea35a.js>; rel=preload; as=script
+  Link: </portfolio/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </portfolio/page-data/offline-plugin-app-shell-fallback/page-data.json>; rel=preload; as=fetch; crossorigin
+/portfolio/404/
+  Link: </portfolio/webpack-runtime-d999033788a6711a83a1.js>; rel=preload; as=script
+  Link: </portfolio/framework-81209d96cc6775a1491c.js>; rel=preload; as=script
+  Link: </portfolio/app-4a3f3044119ead8dd08d.js>; rel=preload; as=script
+  Link: </portfolio/d79ade25c8be76d6b59317f3a16e698cf21327f6-03957df890ddaa165545.js>; rel=preload; as=script
+  Link: </portfolio/component---src-pages-404-jsx-f1817c9a8e3bc9bfa29c.js>; rel=preload; as=script
+  Link: </portfolio/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </portfolio/page-data/404/page-data.json>; rel=preload; as=fetch; crossorigin
+/portfolio/404.html
+  Link: </portfolio/webpack-runtime-d999033788a6711a83a1.js>; rel=preload; as=script
+  Link: </portfolio/framework-81209d96cc6775a1491c.js>; rel=preload; as=script
+  Link: </portfolio/app-4a3f3044119ead8dd08d.js>; rel=preload; as=script
+  Link: </portfolio/d79ade25c8be76d6b59317f3a16e698cf21327f6-03957df890ddaa165545.js>; rel=preload; as=script
+  Link: </portfolio/component---src-pages-404-jsx-f1817c9a8e3bc9bfa29c.js>; rel=preload; as=script
+  Link: </portfolio/page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </portfolio/page-data/404.html/page-data.json>; rel=preload; as=fetch; crossorigin
