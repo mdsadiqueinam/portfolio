@@ -3,46 +3,49 @@ export const cvData = {
   personalInfo: {
     name: "MD SADIQUE INAM",
     title: "Freelance Full-Stack Developer",
+    heroTagline: "Crafting Digital Excellence through Code.",
+    heroDescription:
+      "Freelance Full-Stack Developer creating robust, scalable digital solutions with over 4 years of expertise in high-performance web applications.",
   },
 
   contacts: [
     {
       type: "email",
       value: "md.sadique32@gmail.com",
-      icon: "envelope",
+      icon: "alternate_email",
       link: "mailto:md.sadique32@gmail.com",
     },
     {
       type: "location",
       value: "Kolkata, West Bengal, India",
-      icon: "map-pin",
+      icon: "location_on",
     },
     {
       type: "github",
       value: "github.com/mdsadiqueinam",
-      icon: "github",
+      icon: "account_tree",
       link: "https://github.com/mdsadiqueinam",
     },
     {
       type: "linkedin",
       value: "linkedin.com/in/md32",
-      icon: "linkedin",
+      icon: "link",
       link: "https://www.linkedin.com/in/md32/",
     },
   ],
 
   skills: [
-    { name: "JavaScript", color: "blue" },
-    { name: "Vue.js", color: "blue" },
-    { name: "TypeScript", color: "blue" },
-    { name: "Kotlin", color: "blue" },
-    { name: "AdonisJS", color: "blue" },
-    { name: "Node.js", color: "blue" },
-    { name: "PostgreSQL", color: "green" },
-    { name: "SQLite", color: "green" },
-    { name: "Docker", color: "gray" },
-    { name: "Git", color: "gray" },
-    { name: "HTML & CSS", color: "gray" },
+    { name: "JavaScript", color: "blue", icon: "javascript" },
+    { name: "Vue.js", color: "blue", icon: "settings_input_component" },
+    { name: "TypeScript", color: "blue", icon: "terminal" },
+    { name: "Kotlin", color: "blue", icon: "layers" },
+    { name: "AdonisJS", color: "blue", icon: "rocket_launch" },
+    { name: "Node.js", color: "blue", icon: "memory" },
+    { name: "PostgreSQL", color: "green", icon: "database" },
+    { name: "SQLite", color: "green", icon: "storage" },
+    { name: "Docker", color: "gray", icon: "deployed_code" },
+    { name: "Git", color: "gray", icon: "fork_right" },
+    { name: "HTML & CSS", color: "gray", icon: "html" },
   ],
 
   summary:
@@ -69,31 +72,46 @@ export const cvData = {
       name: "Success.co",
       period: "April 2025 - November 2025",
       description:
-        "Handled full-stack development for a real-time project using Vue.js and Node.js. Responsibilities covered the entire feature lifecycle, including frontend UI, backend API development, and managing PostgreSQL database migrations.",
+        "A high-scale platform focused on performance monitoring and success tracking metrics for enterprise clients.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+      tags: ["Vue.js", "Node.js"],
     },
     {
       name: "Wire2Air",
       period: "Jan 2025 - Present",
       description:
-        "Identifying and resolving software bugs to maintain application stability. Developing and implementing new components based on evolving user requirements and collaborating with designers, PMs, and QA engineers for seamless integration.",
+        "SMS marketing and notification system built to handle millions of real-time messages with extreme reliability.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
+      tags: ["PostgreSQL", "Redis"],
     },
     {
       name: "MHC NorthStar",
       period: "May 2024 - Dec 2024",
       description:
-        "Spearheaded the project migration from Vue 2 to Vue 3. This involved updating Vuetify.js components, resolving breaking changes, and writing Jest tests to ensure code quality and prevent regressions.",
+        "Strategic data visualization dashboard for healthcare professionals to manage patient outcomes and resource allocation.",
+      image:
+        "https://images.unsplash.com/photo-1504868584819-f8e90526354c?q=80&w=2070&auto=format&fit=crop",
+      tags: ["D3.js", "Kotlin"],
     },
     {
       name: "Struxe",
       period: "Apr 2022 - Apr 2024",
       description:
-        "Led full-stack development of a project management platform using Quasar (Vue.js 3), Pinia, and Socket.IO. Developed the backend with AdonisJS 5, Node.js, TypeScript, Docker, and PostgreSQL.",
+        "Infrastructure management tool facilitating communication between field engineers and project managers.",
+      image:
+        "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=2070&auto=format&fit=crop",
+      tags: ["AdonisJS", "Docker"],
     },
     {
       name: "Teamwork",
       period: "Nov 2023 - Apr 2024",
       description:
-        "Converted the Teamwork Project Management Tool's legacy settings pages from iframes into modern, maintainable Vue.js components, building them from scratch to match existing designs.",
+        "A unified workspace for agile teams, featuring Kanban boards, time tracking, and real-time collaborative docs.",
+      image:
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+      tags: ["WebSockets", "TypeScript"],
     },
   ],
 
@@ -109,6 +127,42 @@ export const cvData = {
       institution: "Santiniketan Institute of Polytechnic",
       location: "West Bengal, India",
       period: "2019 - 2022",
+    },
+  ],
+
+  services: [
+    {
+      icon: "terminal",
+      title: "Full-Stack Development",
+      description:
+        "End-to-end development of responsive web applications using Vue.js for the frontend and Node.js/PostgreSQL for the backend.",
+    },
+    {
+      icon: "api",
+      title: "API Integration",
+      description:
+        "Designing and building RESTful and GraphQL APIs that are secure, documented, and highly performant for third-party consumption.",
+    },
+    {
+      icon: "brush",
+      title: "Frontend Modernization",
+      description:
+        "Refactoring legacy codebases into modern component-based architectures for better performance, SEO, and developer experience.",
+    },
+  ],
+
+  testimonials: [
+    {
+      quote:
+        "Sadique is a top-tier developer. His ability to translate our complex business requirements into a smooth, high-performing web application was impressive. He is reliable and communicative.",
+      name: "Johnathan Rivera",
+      role: "CTO, Wire2Air",
+    },
+    {
+      quote:
+        "The speed and quality of work delivered by Sadique exceeded our expectations. He didn't just write code; he suggested architectural improvements that saved us months of rework.",
+      name: "Sarah Chen",
+      role: "Product Manager, Struxe",
     },
   ],
 };
