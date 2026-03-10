@@ -1,4 +1,3 @@
-
 export const cvData = {
   personalInfo: {
     name: "MD SADIQUE INAM",
@@ -74,7 +73,15 @@ export const cvData = {
         "A high-scale platform focused on performance monitoring and success tracking metrics for enterprise clients.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-      tags: ["Vue.js", "Node.js"],
+      tags: [
+        "Vue.js",
+        "Node.js",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Socket.IO",
+        "Tailwind CSS",
+      ],
     },
     {
       name: "Wire2Air",
@@ -83,16 +90,7 @@ export const cvData = {
         "SMS marketing and notification system built to handle millions of real-time messages with extreme reliability.",
       image:
         "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
-      tags: ["PostgreSQL", "Redis"],
-    },
-    {
-      name: "MHC NorthStar",
-      period: "May 2024 - Dec 2024",
-      description:
-        "Strategic data visualization dashboard for healthcare professionals to manage patient outcomes and resource allocation.",
-      image:
-        "https://images.unsplash.com/photo-1504868584819-f8e90526354c?q=80&w=2070&auto=format&fit=crop",
-      tags: ["D3.js", "Kotlin"],
+      tags: ["Vue.js"],
     },
     {
       name: "Struxe",
@@ -101,7 +99,15 @@ export const cvData = {
         "Infrastructure management tool facilitating communication between field engineers and project managers.",
       image:
         "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=2070&auto=format&fit=crop",
-      tags: ["AdonisJS", "Docker"],
+      tags: [
+        "AdonisJS",
+        "Vue.js",
+        "Node.js",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Socket.IO",
+      ],
     },
     {
       name: "Teamwork",
@@ -110,7 +116,7 @@ export const cvData = {
         "A unified workspace for agile teams, featuring Kanban boards, time tracking, and real-time collaborative docs.",
       image:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-      tags: ["WebSockets", "TypeScript"],
+      tags: ["Socket.IO", "Vue.js"],
     },
   ],
 
