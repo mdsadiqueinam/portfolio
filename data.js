@@ -67,10 +67,10 @@ export const cvData = {
 
   projects: [
     {
-      name: "Success.co",
+      name: "Confidential Client | Business Management Software (EOS)",
       period: "April 2025 - November 2025",
       description:
-        "A high-scale platform focused on performance monitoring and success tracking metrics for enterprise clients.",
+        "A high-scale SaaS platform designed to facilitate the Entrepreneurial Operating System (EOS) for enterprise clients. Handled end-to-end development of real-time metrics dashboards, scorecards, and performance tracking tools.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
       tags: [
@@ -84,19 +84,19 @@ export const cvData = {
       ],
     },
     {
-      name: "Wire2Air",
+      name: "Confidential Client | Enterprise Messaging System",
       period: "Jan 2025 - Present",
       description:
-        "SMS marketing and notification system built to handle millions of real-time messages with extreme reliability.",
+        "High-volume marketing and notification system built to process and dispatch millions of real-time messages with extreme reliability.",
       image:
         "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
       tags: ["Vue.js"],
     },
     {
-      name: "Struxe",
+      name: "Confidential Client | Infrastructure Platform",
       period: "Apr 2022 - Apr 2024",
       description:
-        "Infrastructure management tool facilitating communication between field engineers and project managers.",
+        "Enterprise infrastructure management tool facilitating real-time communication and data syncing between field engineers and project managers.",
       image:
         "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=2070&auto=format&fit=crop",
       tags: [
@@ -110,10 +110,10 @@ export const cvData = {
       ],
     },
     {
-      name: "Teamwork",
+      name: "Confidential Client | Agile Workspace Tool",
       period: "Nov 2023 - Apr 2024",
       description:
-        "A unified workspace for agile teams, featuring Kanban boards, time tracking, and real-time collaborative docs.",
+        "A unified project management workspace for agile teams, featuring complex state management for Kanban boards, time tracking, and real-time collaborative docs.",
       image:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
       tags: ["Socket.IO", "Vue.js"],
@@ -156,18 +156,5 @@ export const cvData = {
     },
   ],
 
-  testimonials: [
-    // {
-    //   quote:
-    //     "Sadique is a top-tier developer. His ability to translate our complex business requirements into a smooth, high-performing web application was impressive. He is reliable and communicative.",
-    //   name: "Johnathan Rivera",
-    //   role: "CTO, Wire2Air",
-    // },
-    // {
-    //   quote:
-    //     "The speed and quality of work delivered by Sadique exceeded our expectations. He didn't just write code; he suggested architectural improvements that saved us months of rework.",
-    //   name: "Sarah Chen",
-    //   role: "Product Manager, Struxe",
-    // },
-  ],
+  testimonials: [],
 };
