@@ -29,7 +29,6 @@ const skillGrouped = computed(() => {
     if (!groups[s.group]) groups[s.group] = [];
     groups[s.group].push(s);
   });
-  console.log("Grouped Skills:", groups);
   return groups;
 });
 
