@@ -152,17 +152,17 @@ export const cvData = {
   ],
 
   testimonials: [
-    {
-      quote:
-        "Sadique is a top-tier developer. His ability to translate our complex business requirements into a smooth, high-performing web application was impressive. He is reliable and communicative.",
-      name: "Johnathan Rivera",
-      role: "CTO, Wire2Air",
-    },
-    {
-      quote:
-        "The speed and quality of work delivered by Sadique exceeded our expectations. He didn't just write code; he suggested architectural improvements that saved us months of rework.",
-      name: "Sarah Chen",
-      role: "Product Manager, Struxe",
-    },
+    // {
+    //   quote:
+    //     "Sadique is a top-tier developer. His ability to translate our complex business requirements into a smooth, high-performing web application was impressive. He is reliable and communicative.",
+    //   name: "Johnathan Rivera",
+    //   role: "CTO, Wire2Air",
+    // },
+    // {
+    //   quote:
+    //     "The speed and quality of work delivered by Sadique exceeded our expectations. He didn't just write code; he suggested architectural improvements that saved us months of rework.",
+    //   name: "Sarah Chen",
+    //   role: "Product Manager, Struxe",
+    // },
   ],
 };
