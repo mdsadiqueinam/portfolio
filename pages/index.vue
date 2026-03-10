@@ -28,7 +28,7 @@ useHead({
   >
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
       <AppHeader :personal-info="cvData.personalInfo" />
-      <main class="flex-grow">
+      <main class="grow">
         <HeroSection :personal-info="cvData.personalInfo" />
         <SummarySection :summary="cvData.summary" />
         <SkillsSection :skills="cvData.skills" />
@@ -38,7 +38,7 @@ useHead({
           :education="cvData.education"
         />
         <ServicesSection :services="cvData.services" />
-        <TestimonialsSection :testimonials="cvData.testimonials" />
+        <!-- <TestimonialsSection :testimonials="cvData.testimonials" /> -->
         <CtaSection />
       </main>
       <AppFooter
