@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from "vue";
 import { cvData } from "~/data.js";
 
 useHead({
@@ -21,19 +22,20 @@ useHead({
   ],
 });
 
-const skillGroups = [
-  {
-    label: "Frontend",
-    names: ["JavaScript", "TypeScript", "Vue.js", "HTML & CSS"],
-    highlight: true,
-  },
-  { label: "Backend", names: ["Node.js", "Kotlin", "Rust"], highlight: false },
-  { label: "Databases", names: ["SQL"], highlight: false },
-  { label: "DevOps & Tools", names: ["Docker", "Git"], highlight: false },
-];
+const skillGrouped = computed(() => {
+  if (!cvData?.skills) return {};
+  const groups = {};
+  cvData.skills.forEach((s) => {
+    if (!groups[s.group]) groups[s.group] = [];
+    groups[s.group].push(s);
+  });
+  console.log("Grouped Skills:", groups);
+  return groups;
+});
 
-function getSkillsForGroup(names) {
-  return cvData.skills.filter((s) => names.includes(s.name));
+function isGroupHighlighted(group) {
+  // Highlight "Programming Languages" group as an example
+  return group === "Frontend";
 }
 </script>
 
@@ -187,7 +189,7 @@ function getSkillsForGroup(names) {
           </section>
 
           <!-- Key Projects -->
-          <section class="no-break">
+          <section class="pt-6">
             <h2 class="cv-section-heading">
               <span class="material-symbols-outlined text-primary">code</span>
               Key Projects
@@ -237,17 +239,17 @@ function getSkillsForGroup(names) {
               Skills
             </h2>
             <div class="space-y-4">
-              <div v-for="group in skillGroups" :key="group.label">
+              <div v-for="(skills, label) in skillGrouped" :key="label">
                 <p class="text-xs font-bold text-slate-500 uppercase mb-2">
-                  {{ group.label }}
+                  {{ label }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span
-                    v-for="skill in getSkillsForGroup(group.names)"
+                    v-for="skill in skills"
                     :key="skill.name"
                     class="px-2 py-1 text-xs font-bold rounded"
                     :class="
-                      group.highlight
+                      isGroupHighlighted(label)
                         ? 'bg-primary/10 text-primary border border-primary/20'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
                     "

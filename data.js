@@ -34,16 +34,37 @@ export const cvData = {
   ],
 
   skills: [
-    { name: "JavaScript", color: "blue", icon: "javascript" },
-    { name: "Vue.js", color: "blue", icon: "settings_input_component" },
-    { name: "TypeScript", color: "blue", icon: "terminal" },
-    { name: "Kotlin", color: "blue", icon: "layers" },
-    { name: "Node.js", color: "blue", icon: "memory" },
-    { name: "Rust", color: "red", icon: "rocket_launch" },
-    { name: "SQL", color: "green", icon: "database" },
-    { name: "Docker", color: "gray", icon: "deployed_code" },
-    { name: "Git", color: "gray", icon: "fork_right" },
-    { name: "HTML & CSS", color: "gray", icon: "html" },
+    {
+      name: "JavaScript",
+      color: "blue",
+      icon: "javascript",
+      group: "Frontend",
+    },
+    {
+      name: "Vue.js",
+      color: "blue",
+      icon: "settings_input_component",
+      group: "Frontend",
+    },
+    { name: "TypeScript", color: "blue", icon: "terminal", group: "Frontend" },
+    {
+      name: "Kotlin (Android)",
+      color: "blue",
+      icon: "layers",
+      group: "Frontend",
+    },
+    { name: "Kotlin", color: "blue", icon: "layers", group: "Backend" },
+    { name: "Node.js", color: "blue", icon: "memory", group: "Backend" },
+    { name: "Rust", color: "red", icon: "rocket_launch", group: "Backend" },
+    { name: "SQL", color: "green", icon: "database", group: "Databases" },
+    {
+      name: "Docker",
+      color: "gray",
+      icon: "deployed_code",
+      group: "DevOps & Tools",
+    },
+    { name: "Git", color: "gray", icon: "fork_right", group: "DevOps & Tools" },
+    { name: "HTML & CSS", color: "gray", icon: "html", group: "Frontend" },
   ],
 
   summary:
