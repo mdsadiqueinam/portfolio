@@ -68,7 +68,7 @@ export const cvData = {
   ],
 
   summary:
-    "Results-oriented Full-Stack Developer with 4 years of hands-on experience building and scaling complex, real-time web applications. Operating as an independent consultant, I have a proven track record of delivering end-to-end solutions for various clients, specializing in the Vue.js ecosystem and Node.js (AdonisJS). Currently pursuing a B.Tech in Computer Science to complement my practical industry experience, I am adept at leading modernization projects, managing database migrations, and architecting robust backends. I am actively seeking to transition my freelance expertise into a dedicated, impact-driven product team in a remote environment.",
+    "Results-oriented Full-Stack Developer with 4 years of hands-on experience building and scaling complex, real-time web applications. Operating as an independent consultant, I have a proven track record of delivering end-to-end solutions for various clients, specializing in the Vue.js ecosystem and Node.js. Currently pursuing a B.Tech in Computer Science to complement my practical industry experience, I am adept at leading modernization projects, managing database migrations, and architecting robust backends. I am actively seeking to transition my freelance expertise into a dedicated, impact-driven product team in a remote environment.",
 
   experience: [
     {
@@ -77,7 +77,7 @@ export const cvData = {
       location: "Remote",
       period: "April 2022 - Present",
       responsibilities: [
-        "Partner with diverse clients to lead full-stack development on key projects, taking ownership of the entire feature lifecycle from frontend UI in Vue.js to backend APIs in Node.js (AdonisJS) and database migrations with PostgreSQL.",
+        "Partner with diverse clients to lead full-stack development on key projects, taking ownership of the entire feature lifecycle from frontend UI in Vue.js to backend APIs in Node.js and database with PostgreSQL.",
         "Spearhead critical modernization efforts for enterprise applications, including a major project migration from Vue 2 to Vue 3, which involved updating component libraries like Vuetify, resolving breaking changes, and ensuring stability with Jest tests.",
         "Specialize in refactoring and improving legacy systems, converting outdated iframe-based architectures into modern, reusable, and maintainable Vue.js components.",
         "Architect and maintain real-time features using Socket.IO, enhancing user engagement and application interactivity in complex project management platforms.",
@@ -121,7 +121,6 @@ export const cvData = {
       image:
         "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=2070&auto=format&fit=crop",
       tags: [
-        "AdonisJS",
         "Vue.js",
         "Node.js",
         "PostgreSQL",
