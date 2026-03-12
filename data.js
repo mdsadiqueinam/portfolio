@@ -2,9 +2,9 @@ export const cvData = {
   personalInfo: {
     name: "MD SADIQUE INAM",
     title: "Freelance Full-Stack Developer",
-    heroTagline: "Crafting Digital Excellence through Code.",
+    heroTagline: "Building fast, reliable web applications.",
     heroDescription:
-      "Freelance Full-Stack Developer creating robust, scalable digital solutions with over 4 years of expertise in high-performance web applications.",
+      "Freelance Full-Stack Developer with over 4 years of experience creating real-time web apps that solve real business problems.",
   },
 
   contacts: [
@@ -68,7 +68,7 @@ export const cvData = {
   ],
 
   summary:
-    "Results-oriented Full-Stack Developer with 4 years of hands-on experience building and scaling complex, real-time web applications. Operating as an independent consultant, I have a proven track record of delivering end-to-end solutions for various clients, specializing in the Vue.js ecosystem and Node.js. Currently pursuing a B.Tech in Computer Science to complement my practical industry experience, I am adept at leading modernization projects, managing database migrations, and architecting robust backends. I am actively seeking to transition my freelance expertise into a dedicated, impact-driven product team in a remote environment.",
+    "I am a Full-Stack Developer with 4 years of hands-on experience building and improving real-time web apps. Working as an independent freelancer, I have handled everything from setting up Node.js backends and PostgreSQL databases to building clean, responsive Vue.js frontends. I am currently studying for my B.Tech in Computer Science to back up my practical experience. I love taking on outdated code and turning it into something modern, fast, and easy to maintain. Right now, I am looking to join a remote product team full-time where I can focus on building great software.",
 
   experience: [
     {
@@ -77,11 +77,11 @@ export const cvData = {
       location: "Remote",
       period: "April 2022 - Present",
       responsibilities: [
-        "Partner with diverse clients to lead full-stack development on key projects, taking ownership of the entire feature lifecycle from frontend UI in Vue.js to backend APIs in Node.js and database with PostgreSQL.",
-        "Spearhead critical modernization efforts for enterprise applications, including a major project migration from Vue 2 to Vue 3, which involved updating component libraries like Vuetify, resolving breaking changes, and ensuring stability with Jest tests.",
-        "Specialize in refactoring and improving legacy systems, converting outdated iframe-based architectures into modern, reusable, and maintainable Vue.js components.",
-        "Architect and maintain real-time features using Socket.IO, enhancing user engagement and application interactivity in complex project management platforms.",
-        "Consistently deliver high-quality, robust, and scalable software solutions on a contract basis, effectively managing timelines and technical requirements for multiple stakeholders.",
+        "Built web applications from start to finish for various clients. I handled everything from setting up PostgreSQL databases and writing complex queries to creating smooth, easy-to-use Vue.js frontends.",
+        "Upgraded older platforms to modern standards, like safely moving large projects from Vue 2 to Vue 3. I fixed code issues and used Jest testing to make sure the apps kept running without crashing during updates.",
+        "Cleaned up old, messy codebases. I replaced outdated, heavy iframe pages with modern, reusable Vue.js components that are much easier to manage and scale.",
+        "Added real-time features using Socket.IO. This allowed for live data syncing and instant updates, making complex workspace tools much more interactive for users.",
+        "Worked directly with clients to figure out exactly what they needed, turning their business rules into fast, working software and always delivering on time.",
       ],
     },
   ],
@@ -91,7 +91,7 @@ export const cvData = {
       name: "Confidential Client | Business Management Software (EOS)",
       period: "April 2025 - November 2025",
       description:
-        "A high-scale SaaS platform designed to facilitate the Entrepreneurial Operating System (EOS) for enterprise clients. Handled end-to-end development of real-time metrics dashboards, scorecards, and performance tracking tools.",
+        "A large web app that helps businesses run the Entrepreneurial Operating System (EOS). I built the live dashboards, scorecards, and tracking tools from the ground up.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
       tags: [
@@ -108,7 +108,7 @@ export const cvData = {
       name: "Confidential Client | Enterprise Messaging System",
       period: "Jan 2025 - Present",
       description:
-        "High-volume marketing and notification system built to process and dispatch millions of real-time messages with extreme reliability.",
+        "A reliable messaging system that processes and sends millions of SMS notifications to users in real-time without failing.",
       image:
         "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
       tags: ["Vue.js"],
@@ -117,7 +117,7 @@ export const cvData = {
       name: "Confidential Client | Infrastructure Platform",
       period: "Apr 2022 - Apr 2024",
       description:
-        "Enterprise infrastructure management tool facilitating real-time communication and data syncing between field engineers and project managers.",
+        "A management tool that helps field engineers and project managers share data and talk to each other instantly while on the job.",
       image:
         "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=2070&auto=format&fit=crop",
       tags: [
@@ -133,7 +133,7 @@ export const cvData = {
       name: "Confidential Client | Agile Workspace Tool",
       period: "Nov 2023 - Apr 2024",
       description:
-        "A unified project management workspace for agile teams, featuring complex state management for Kanban boards, time tracking, and real-time collaborative docs.",
+        "A workspace app for teams to manage their projects, complete with live collaborative docs, time tracking, and Kanban boards.",
       image:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
       tags: ["Socket.IO", "Vue.js"],
@@ -160,19 +160,19 @@ export const cvData = {
       icon: "terminal",
       title: "Full-Stack Development",
       description:
-        "End-to-end development of responsive web applications using Vue.js for the frontend and Node.js/PostgreSQL for the backend.",
+        "Building complete web apps from the database up to the user interface using Node.js, PostgreSQL, and Vue.js.",
     },
     {
       icon: "api",
       title: "API Integration",
       description:
-        "Designing and building RESTful and GraphQL APIs that are secure, documented, and highly performant for third-party consumption.",
+        "Creating secure, fast APIs that connect your app to other services smoothly and reliably.",
     },
     {
       icon: "brush",
       title: "Frontend Modernization",
       description:
-        "Refactoring legacy codebases into modern component-based architectures for better performance, SEO, and developer experience.",
+        "Taking old, slow code and updating it with modern tools to make it faster, better for SEO, and easier to work with.",
     },
   ],
 
