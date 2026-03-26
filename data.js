@@ -55,6 +55,7 @@ export const cvData = {
     },
     { name: "Kotlin", color: "blue", icon: "layers", group: "Backend" },
     { name: "Node.js", color: "blue", icon: "memory", group: "Backend" },
+    { name: "AdonisJS", color: "blue", icon: "network_node", group: "Backend" },
     { name: "Rust", color: "red", icon: "rocket_launch", group: "Backend" },
     { name: "SQL", color: "green", icon: "database", group: "Databases" },
     {
@@ -68,7 +69,7 @@ export const cvData = {
   ],
 
   summary:
-    "I am a Full-Stack Developer with 4 years of hands-on experience building and improving real-time web apps. Working as an independent freelancer, I have handled everything from setting up Node.js backends and PostgreSQL databases to building clean, responsive Vue.js frontends. I am currently studying for my B.Tech in Computer Science to back up my practical experience. I love taking on outdated code and turning it into something modern, fast, and easy to maintain. Right now, I am looking to join a remote product team full-time where I can focus on building great software.",
+    "Full-Stack Developer with 4+ years of experience building real-time web applications. Specialized in Vue.js frontend development and Node.js/AdonisJS backend architecture. Proficient with PostgreSQL database design, Docker containerization, and Socket.IO real-time communication. Currently pursuing B.Tech in Computer Science while delivering freelance projects. Adept at modernizing legacy systems and building maintainable, scalable solutions.",
 
   experience: [
     {
@@ -77,66 +78,78 @@ export const cvData = {
       location: "Remote",
       period: "April 2022 - Present",
       responsibilities: [
-        "🚀 Full-Stack Development: Built web applications from start to finish for various clients. I handled everything from designing the databases and writing complex data queries to creating smooth, easy-to-use user interfaces.",
-        "⚡️ System Upgrades: Safely upgraded large projects to modern standards. I fixed code issues and used automated testing to make sure the apps kept running perfectly without crashing during the updates.",
-        "🛠️ Code Cleanup: Replaced outdated, heavy web pages with modern, reusable code. This made the applications much cleaner, faster, and easier to manage and scale.",
-        "📡 Live Features: Added real-time features that allow for live data syncing and instant updates. This made complex workspace tools much more interactive and engaging for users.",
-        "💼 Client Problem-Solving: Worked directly with clients to understand exactly what they needed, turning their business rules into fast, reliable software and always delivering on time.",
+        "Full-Stack Development: Designed and implemented complete web applications from database schema design to responsive Vue.js frontend interfaces.",
+        "System Upgrades: Migrated legacy applications to modern tech stacks with comprehensive testing to ensure zero downtime during transitions.",
+        "Code Modernization: Refactored outdated codebases into maintainable, reusable component architectures improving performance and developer velocity.",
+        "Real-Time Features: Integrated Socket.IO for live data synchronization and instant updates in workspace collaboration tools.",
+        "Client Collaboration: Worked directly with stakeholders to translate business requirements into technical solutions with on-time delivery.",
       ],
     },
   ],
 
   projects: [
     {
+      name: "TurboGraph",
+      period: "2025 - Present",
+      description:
+        "Open-source Rust library for automatic GraphQL API generation from PostgreSQL schemas via schema introspection. Built with async-graphql, supporting generated queries, mutations, filtering, ordering, and pagination. Features request-level transaction configuration for roles, settings, timeouts, and Row-Level Security patterns. Integrates with Axum web framework. Published on crates.io.",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2426&auto=format&fit=crop",
+      tags: ["Rust", "PostgreSQL", "GraphQL", "async-graphql", "Axum", "TypeScript"],
+    },
+    {
       name: "Confidential Client | Business Management Software (EOS)",
       period: "April 2025 - November 2025",
       description:
-        "A large web app that helps businesses run the Entrepreneurial Operating System (EOS). I built the live dashboards, scorecards, and tracking tools from the ground up.",
+        "Enterprise web application implementing the Entrepreneurial Operating System (EOS) framework. Built live dashboards, scorecards, and tracking tools with real-time data visualization.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
       tags: [
         "Vue.js",
         "Node.js",
+        "AdonisJS",
         "PostgreSQL",
         "Redis",
         "Docker",
         "Socket.IO",
-        "Tailwind CSS",
+        "TypeScript",
       ],
     },
     {
       name: "Confidential Client | Enterprise Messaging System",
       period: "Jan 2025 - Present",
       description:
-        "A reliable messaging system that processes and sends millions of SMS notifications to users in real-time without failing.",
+        "High-throughput messaging system handling real-time SMS notification delivery with reliable processing and delivery confirmation.",
       image:
         "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
-      tags: ["Vue.js"],
+      tags: ["Vue.js", "Node.js", "TypeScript"],
     },
     {
       name: "Confidential Client | Infrastructure Platform",
       period: "Apr 2022 - Apr 2024",
       description:
-        "A management tool that helps field engineers and project managers share data and talk to each other instantly while on the job.",
+        "Field operations management platform enabling real-time data sharing and communication between field engineers and project managers.",
       image:
         "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=2070&auto=format&fit=crop",
       tags: [
         "Vue.js",
         "Node.js",
+        "AdonisJS",
         "PostgreSQL",
         "Redis",
         "Docker",
         "Socket.IO",
+        "TypeScript",
       ],
     },
     {
       name: "Confidential Client | Agile Workspace Tool",
       period: "Nov 2023 - Apr 2024",
       description:
-        "A workspace app for teams to manage their projects, complete with live collaborative docs, time tracking, and Kanban boards.",
+        "Collaborative workspace application featuring real-time document editing, time tracking, and Kanban-style project boards.",
       image:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-      tags: ["Socket.IO", "Vue.js"],
+      tags: ["Vue.js", "Node.js", "Socket.IO", "TypeScript"],
     },
   ],
 
