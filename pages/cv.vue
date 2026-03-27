@@ -188,7 +188,7 @@ function isGroupHighlighted(group) {
           </section>
 
           <!-- Key Projects -->
-          <section class="pt-6">
+          <section class="pt-2">
             <h2 class="cv-section-heading">
               <span class="material-symbols-outlined text-primary">code</span>
               Key Projects
