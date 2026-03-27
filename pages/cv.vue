@@ -3,21 +3,17 @@ import { computed } from "vue";
 import { cvData } from "~/data.js";
 
 useHead({
-  title: `${cvData.personalInfo.name} | CV`,
+  title: `${cvData.personalInfo.name} | Resume`,
   meta: [
     {
       name: "description",
-      content: `Curriculum Vitae of ${cvData.personalInfo.name}`,
+      content: `Resume of ${cvData.personalInfo.name}`,
     },
   ],
   link: [
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-    },
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap",
+      href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
     },
   ],
 });
@@ -27,319 +23,310 @@ const skillGrouped = computed(() => {
   const groups = {};
   cvData.skills.forEach((s) => {
     if (!groups[s.group]) groups[s.group] = [];
-    groups[s.group].push(s);
+    groups[s.group].push(s.name);
   });
   return groups;
 });
 
-function isGroupHighlighted(group) {
-  // Highlight "Programming Languages" group as an example
-  return group === "Frontend";
-}
+const contactLine = computed(() =>
+  (cvData.contacts || []).map((contact) => contact.value).join(" • ")
+);
 </script>
 
 <template>
-  <div
-    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen"
-  >
-    <!-- Top Navigation — hidden on print -->
-    <header
-      class="no-print sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark"
-    >
-      <div
-        class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between"
-      >
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary"
-            >description</span
-          >
-          <span class="font-bold text-lg tracking-tight">CURRICULUM VITAE</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <NuxtLink
-            to="/"
-            class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="material-symbols-outlined text-base leading-none"
-              >arrow_back</span
-            >
-            Portfolio
-          </NuxtLink>
-          <button
-            class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 transition-colors"
-            @click="() => window.print()"
-          >
-            <span class="material-symbols-outlined text-base leading-none"
-              >print</span
-            >
-            Print / Save PDF
-          </button>
-        </div>
+  <div class="resume-page">
+    <header class="resume-toolbar no-print">
+      <div class="resume-toolbar-inner">
+        <NuxtLink to="/" class="toolbar-link">← Portfolio</NuxtLink>
+        <button class="toolbar-button" @click="() => window.print()">
+          Print / Save PDF
+        </button>
       </div>
     </header>
 
-    <!-- A4 CV Sheet -->
-    <main
-      class="max-w-[210mm] mx-auto my-8 bg-white dark:bg-slate-900 shadow-xl print:shadow-none print:my-0 min-h-[297mm] p-10 print:p-0"
-    >
-      <!-- ── Header: Name + Contact ── -->
-      <div
-        class="flex justify-between items-start border-b-4 border-primary pb-8 mb-8 gap-6"
-      >
+    <main class="resume-sheet">
+      <section class="resume-header">
+        <h1>{{ cvData.personalInfo.name }}</h1>
+        <p class="resume-title">Full-Stack Developer</p>
+        <p class="resume-contacts">{{ contactLine }}</p>
+      </section>
+
+      <section>
+        <h2 class="resume-section-title">Professional Summary</h2>
+        <p class="resume-summary">{{ cvData.summary }}</p>
+      </section>
+
+      <section>
+        <h2 class="resume-section-title">Professional Experience</h2>
+        <article
+          v-for="job in cvData.experience"
+          :key="job.title + job.company"
+          class="resume-entry"
+        >
+          <div class="resume-entry-header">
+            <div>
+              <h3>{{ job.title }}</h3>
+              <p class="resume-entry-subtitle">{{ job.company }} | {{ job.location }}</p>
+            </div>
+            <p class="resume-entry-period">{{ job.period }}</p>
+          </div>
+          <ul class="resume-list">
+            <li v-for="(responsibility, index) in job.responsibilities" :key="index">
+              {{ responsibility }}
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2 class="resume-section-title">Key Projects</h2>
+        <article
+          v-for="project in cvData.projects"
+          :key="project.name"
+          class="resume-entry compact"
+        >
+          <div class="resume-entry-header">
+            <div>
+              <h3>{{ project.name }}</h3>
+            </div>
+            <p class="resume-entry-period">{{ project.period }}</p>
+          </div>
+          <p class="resume-project-description">{{ project.description }}</p>
+          <p class="resume-tags">{{ project.tags.join(", ") }}</p>
+        </article>
+      </section>
+
+      <section class="resume-two-column">
         <div>
-          <h1
-            class="text-4xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tighter"
-          >
-            {{ cvData.personalInfo.name }}
-          </h1>
-          <p class="text-primary text-xl font-semibold mt-1">
-            {{ cvData.personalInfo.title }}
-          </p>
-          <p
-            class="text-slate-500 dark:text-slate-400 mt-2 max-w-lg text-sm leading-relaxed"
-          >
-            {{ cvData.personalInfo.heroDescription }}
-          </p>
-        </div>
-        <div class="flex flex-col gap-2 text-sm shrink-0">
-          <template v-for="contact in cvData.contacts" :key="contact.type">
-            <a
-              v-if="contact.link"
-              :href="contact.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
-            >
-              <span
-                class="material-symbols-outlined text-primary text-lg leading-none"
-              >
-                {{ contact.icon }}
-              </span>
-              <span>{{ contact.value }}</span>
-            </a>
-            <div
-              v-else
-              class="flex items-center gap-2 text-slate-600 dark:text-slate-300"
-            >
-              <span
-                class="material-symbols-outlined text-primary text-lg leading-none"
-              >
-                {{ contact.icon }}
-              </span>
-              <span>{{ contact.value }}</span>
-            </div>
-          </template>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-3 gap-10">
-        <!-- ── Left Column: Summary · Experience · Projects ── -->
-        <div class="col-span-2 space-y-8">
-          <!-- Summary -->
-          <section>
-            <h2 class="cv-section-heading">
-              <span class="material-symbols-outlined text-primary">person</span>
-              Professional Summary
-            </h2>
-            <p
-              class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm"
-            >
-              {{ cvData.summary }}
-            </p>
-          </section>
-
-          <!-- Experience -->
-          <section>
-            <h2 class="cv-section-heading">
-              <span class="material-symbols-outlined text-primary">work</span>
-              Professional Experience
-            </h2>
-            <div class="space-y-6">
-              <div
-                v-for="job in cvData.experience"
-                :key="job.title + job.company"
-              >
-                <div
-                  class="flex flex-wrap justify-between items-baseline gap-2"
-                >
-                  <h3
-                    class="font-bold text-slate-900 dark:text-white text-base"
-                  >
-                    {{ job.title }}
-                  </h3>
-                  <span class="text-sm font-medium text-primary">{{
-                    job.period
-                  }}</span>
-                </div>
-                <p
-                  class="text-slate-600 dark:text-slate-400 font-medium italic mb-2 text-sm"
-                >
-                  {{ job.company }} · {{ job.location }}
-                </p>
-                <ul
-                  class="list-disc ml-5 space-y-1 text-slate-700 dark:text-slate-300 text-sm"
-                >
-                  <li v-for="(r, i) in job.responsibilities" :key="i">
-                    {{ r }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- Key Projects -->
-          <section class="pt-6">
-            <h2 class="cv-section-heading">
-              <span class="material-symbols-outlined text-primary">code</span>
-              Key Projects
-            </h2>
-            <div class="grid grid-cols-1 gap-3">
-              <div
-                v-for="project in cvData.projects"
-                :key="project.name"
-                class="p-3 border border-slate-100 dark:border-slate-800 rounded-lg"
-              >
-                <div
-                  class="flex flex-wrap justify-between items-baseline gap-2 mb-1"
-                >
-                  <span
-                    class="font-bold text-slate-900 dark:text-white text-sm"
-                  >
-                    {{ project.name }}
-                  </span>
-                  <span class="text-xs text-primary font-medium">{{
-                    project.period
-                  }}</span>
-                </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mb-2">
-                  {{ project.description }}
-                </p>
-                <div class="flex flex-wrap gap-1">
-                  <span
-                    v-for="tag in project.tags"
-                    :key="tag"
-                    class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs rounded"
-                    >{{ tag }}</span
-                  >
-                </div>
-              </div>
-            </div>
-          </section>
+          <h2 class="resume-section-title">Skills</h2>
+          <div v-for="(skills, label) in skillGrouped" :key="label" class="resume-skill-group">
+            <h3>{{ label }}</h3>
+            <p>{{ skills.join(", ") }}</p>
+          </div>
         </div>
 
-        <!-- ── Right Column: Skills · Education · Languages ── -->
-        <div class="space-y-8">
-          <!-- Skills -->
-          <section>
-            <h2 class="cv-section-heading">
-              <span class="material-symbols-outlined text-primary"
-                >psychology</span
-              >
-              Skills
-            </h2>
-            <div class="space-y-4">
-              <div v-for="(skills, label) in skillGrouped" :key="label">
-                <p class="text-xs font-bold text-slate-500 uppercase mb-2">
-                  {{ label }}
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span
-                    v-for="skill in skills"
-                    :key="skill.name"
-                    class="px-2 py-1 text-xs font-bold rounded"
-                    :class="
-                      isGroupHighlighted(label)
-                        ? 'bg-primary/10 text-primary border border-primary/20'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
-                    "
-                    >{{ skill.name }}</span
-                  >
-                </div>
-              </div>
-            </div>
-          </section>
+        <div>
+          <h2 class="resume-section-title">Education</h2>
+          <article v-for="edu in cvData.education" :key="edu.degree" class="resume-entry compact">
+            <h3>{{ edu.degree }}</h3>
+            <p class="resume-entry-subtitle">{{ edu.institution }}, {{ edu.location }}</p>
+            <p class="resume-entry-period">{{ edu.period }}</p>
+          </article>
 
-          <!-- Education -->
-          <section>
-            <h2 class="cv-section-heading">
-              <span class="material-symbols-outlined text-primary">school</span>
-              Education
-            </h2>
-            <div class="space-y-4">
-              <div v-for="edu in cvData.education" :key="edu.degree">
-                <h3 class="font-bold text-slate-900 dark:text-white text-sm">
-                  {{ edu.degree }}
-                </h3>
-                <p class="text-xs text-slate-500 mt-0.5 italic">
-                  {{ edu.institution }}, {{ edu.location }}
-                </p>
-                <p class="text-xs text-primary mt-0.5 font-medium">
-                  {{ edu.period }}
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Languages -->
-          <section>
-            <h2 class="cv-section-heading">
-              <span class="material-symbols-outlined text-primary"
-                >language</span
-              >
-              Languages
-            </h2>
-            <div class="space-y-2">
-              <div class="flex justify-between items-center text-sm">
-                <span class="text-slate-700 dark:text-slate-300">English</span>
-                <span class="text-slate-400 text-xs">Proficient</span>
-              </div>
-              <div class="flex justify-between items-center text-sm">
-                <span class="text-slate-700 dark:text-slate-300">Hindi</span>
-                <span class="text-slate-400 text-xs">Native</span>
-              </div>
-            </div>
-          </section>
+          <h2 class="resume-section-title extra-space">Languages</h2>
+          <div class="resume-skill-group">
+            <p>English — Proficient</p>
+            <p>Hindi — Native</p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Footer -->
-      <footer
-        class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center"
-      >
-        <p class="text-xs text-slate-400">References available upon request.</p>
+      <footer class="resume-footer">
+        References available upon request.
       </footer>
     </main>
   </div>
 </template>
 
 <style>
-.cv-section-heading {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  color: #0f172a;
+:root {
+  color-scheme: light;
 }
 
-.dark .cv-section-heading {
-  color: #fff;
-  border-color: #334155;
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.resume-page {
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 2rem 1rem;
+}
+
+.resume-toolbar {
+  margin-bottom: 1rem;
+}
+
+.resume-toolbar-inner {
+  max-width: 210mm;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-link,
+.toolbar-button {
+  font: inherit;
+  text-decoration: none;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.toolbar-button {
+  background: #111827;
+  color: white;
+  border-color: #111827;
+}
+
+.resume-sheet {
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  padding: 18mm 16mm;
+  box-sizing: border-box;
+}
+
+.resume-header {
+  border-bottom: 2px solid #111827;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.resume-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.resume-title,
+.resume-contacts,
+.resume-summary,
+.resume-entry-subtitle,
+.resume-entry-period,
+.resume-project-description,
+.resume-tags,
+.resume-skill-group p,
+.resume-footer,
+.resume-list {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.resume-title {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+}
+
+.resume-contacts {
+  margin: 0.35rem 0 0;
+  color: #4b5563;
+}
+
+.resume-section-title {
+  margin: 1rem 0 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111827;
+}
+
+.resume-entry {
+  margin-bottom: 0.9rem;
+}
+
+.resume-entry.compact {
+  margin-bottom: 0.75rem;
+}
+
+.resume-entry-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.resume-entry h3,
+.resume-skill-group h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.resume-entry-subtitle,
+.resume-entry-period,
+.resume-project-description,
+.resume-tags,
+.resume-skill-group p {
+  margin: 0.2rem 0 0;
+}
+
+.resume-entry-period {
+  white-space: nowrap;
+  color: #374151;
+}
+
+.resume-list {
+  margin: 0.5rem 0 0 1.1rem;
+  padding: 0;
+}
+
+.resume-list li {
+  margin-bottom: 0.3rem;
+}
+
+.resume-project-description,
+.resume-tags,
+.resume-skill-group p,
+.resume-entry-subtitle,
+.resume-contacts,
+.resume-footer {
+  color: #4b5563;
+}
+
+.resume-two-column {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+}
+
+.resume-skill-group {
+  margin-bottom: 0.75rem;
+}
+
+.extra-space {
+  margin-top: 1.2rem;
+}
+
+.resume-footer {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
 }
 
 @media print {
+  body,
+  .resume-page {
+    background: white;
+    padding: 0;
+  }
+
   .no-print {
     display: none !important;
   }
 
+  .resume-sheet {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    min-height: auto;
+    padding: 10mm 8mm;
+  }
+
   @page {
-    margin: 1cm;
     size: A4;
+    margin: 8mm;
   }
 }
 </style>
