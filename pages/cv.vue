@@ -197,7 +197,7 @@ function isGroupHighlighted(group) {
               <div
                 v-for="project in cvData.projects"
                 :key="project.name"
-                class="p-3 border border-slate-100 dark:border-slate-800 rounded-lg"
+                class="p-3 border border-slate-100 dark:border-slate-800 rounded-lg break-inside-avoid-page"
               >
                 <div
                   class="flex flex-wrap justify-between items-baseline gap-2 mb-1"
