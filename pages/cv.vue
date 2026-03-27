@@ -149,7 +149,7 @@ function isGroupHighlighted(group) {
           </section>
 
           <!-- Experience -->
-          <section>
+          <section class="print:mb-44">
             <h2 class="cv-section-heading">
               <span class="material-symbols-outlined text-primary">work</span>
               Professional Experience
