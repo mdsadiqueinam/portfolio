@@ -90,7 +90,7 @@ export const cvData = {
   projects: [
     {
       name: "TurboGraph",
-      period: "2025 - Present",
+      period: "2026 - Present",
       description:
         "Open-source Rust library for automatic GraphQL API generation from PostgreSQL schemas via schema introspection. Built with async-graphql, supporting generated queries, mutations, filtering, ordering, and pagination. Features request-level transaction configuration for roles, settings, timeouts, and Row-Level Security patterns. Integrates with Axum web framework. Published on crates.io.",
       image:
