@@ -89,20 +89,13 @@ export const cvData = {
 
   projects: [
     {
-      name: "TurboGraph",
-      period: "2026 - Present",
+      name: "Krafon",
+      period: "Jan 2026 - May 2026",
       description:
-        "Open-source Rust library for automatic GraphQL API generation from PostgreSQL schemas via schema introspection. Built with async-graphql, supporting generated queries, mutations, filtering, ordering, and pagination. Features request-level transaction configuration for roles, settings, timeouts, and Row-Level Security patterns. Integrates with Axum web framework. Published on crates.io.",
+        "Developed a real-time AI Social Media Manager application with AI-powered content generation and scheduling features. Implemented a robust backend using nodejs, PostgreSQL, and Socket.IO for real-time updates, while the frontend was built with Vue.js for a responsive user experience.",
       image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2426&auto=format&fit=crop",
-      tags: [
-        "Rust",
-        "PostgreSQL",
-        "GraphQL",
-        "async-graphql",
-        "Axum",
-        "TypeScript",
-      ],
+        "https://krafon.com/krafon-media-kit/9_screenshots_n_gifs/ai-content-30.png",
+      tags: ["Node.js", "PostgreSQL", "GraphQL", "Socket.IO", "Vue.js"],
     },
     {
       name: "Success.co",
