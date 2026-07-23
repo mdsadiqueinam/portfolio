@@ -216,12 +216,6 @@ function printCV() {
           </div>
         </div>
       </section>
-
-      <footer
-        class="mt-5 border-t border-gray-200 pt-3 text-[0.92rem] leading-normal text-gray-600"
-      >
-        References available upon request.
-      </footer>
     </main>
   </div>
 </template>
