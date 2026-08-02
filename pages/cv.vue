@@ -28,10 +28,6 @@ const skillGrouped = computed(() => {
   return groups;
 });
 
-const contactLine = computed(() =>
-  (cvData.contacts || []).map((contact) => contact.value).join(" • "),
-);
-
 function printCV() {
   window.print();
 }
@@ -63,6 +59,7 @@ function printCV() {
     <main
       class="mx-auto min-h-[297mm] w-full max-w-[210mm] bg-white px-[16mm] py-[18mm] shadow-[0_20px_60px_rgba(15,23,42,0.12)] print:m-0 print:min-h-0 print:max-w-none print:px-[8mm] print:py-[10mm] print:shadow-none"
     >
+      <!-- Header Section -->
       <section class="mb-4 border-b-2 border-gray-900 pb-3">
         <h1
           class="m-0 text-[2rem] leading-[1.1] font-extrabold tracking-[0.01em]"
@@ -70,13 +67,32 @@ function printCV() {
           {{ cvData.personalInfo.name }}
         </h1>
         <p class="mt-[0.35rem] text-[0.92rem] leading-normal font-bold">
-          Full-Stack Developer
+          {{ cvData.personalInfo.title }}
         </p>
+        <!-- Plain text contacts with links applied invisibly for ATS/Recruiter ease -->
         <p class="mt-[0.35rem] text-[0.92rem] leading-normal text-gray-600">
-          {{ contactLine }}
+          <template
+            v-for="(contact, index) in cvData.contacts"
+            :key="contact.type"
+          >
+            <a
+              v-if="contact.link"
+              :href="contact.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-600 transition hover:text-gray-900 hover:underline"
+            >
+              {{ contact.value }}
+            </a>
+            <span v-else>{{ contact.value }}</span>
+            <span v-if="index < cvData.contacts.length - 1" class="mx-1"
+              >•</span
+            >
+          </template>
         </p>
       </section>
 
+      <!-- Summary Section -->
       <section>
         <h2
           class="mt-4 mb-[0.6rem] text-[0.82rem] font-extrabold tracking-[0.08em] text-gray-900 uppercase"
@@ -88,6 +104,7 @@ function printCV() {
         </p>
       </section>
 
+      <!-- Experience Section -->
       <section>
         <h2
           class="mt-4 mb-[0.6rem] text-[0.82rem] font-extrabold tracking-[0.08em] text-gray-900 uppercase"
@@ -128,11 +145,12 @@ function printCV() {
         </article>
       </section>
 
+      <!-- Client Projects Section (Consolidated) -->
       <section>
         <h2
           class="mt-4 mb-[0.6rem] text-[0.82rem] font-extrabold tracking-[0.08em] text-gray-900 uppercase"
         >
-          Key Projects
+          Selected Client Projects
         </h2>
         <article
           v-for="project in cvData.projects"
@@ -149,15 +167,22 @@ function printCV() {
               {{ project.period }}
             </p>
           </div>
-          <p class="mt-[0.2rem] text-[0.92rem] leading-normal text-gray-600">
-            {{ project.description }}
-          </p>
-          <p class="mt-[0.2rem] text-[0.92rem] leading-normal text-gray-600">
-            {{ project.tags.join(", ") }}
-          </p>
+          <!-- Consistent bullet structure for easy scanning -->
+          <ul
+            class="mt-1 ml-[1.1rem] list-disc p-0 text-[0.92rem] leading-normal text-gray-700"
+          >
+            <li>
+              {{ project.description }}
+              <span class="block mt-1 text-[0.88rem] text-gray-500">
+                <span class="font-semibold text-gray-600">Stack:</span>
+                {{ project.tags.join(", ") }}
+              </span>
+            </li>
+          </ul>
         </article>
       </section>
 
+      <!-- Skills & Education Grid -->
       <section
         class="grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_1fr] print:grid-cols-[1.2fr_1fr]"
       >
@@ -165,7 +190,7 @@ function printCV() {
           <h2
             class="mt-4 mb-[0.6rem] text-[0.82rem] font-extrabold tracking-[0.08em] text-gray-900 uppercase"
           >
-            Skills
+            Technical Skills
           </h2>
           <div
             v-for="(skills, label) in skillGrouped"
