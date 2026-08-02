@@ -4,7 +4,7 @@ export const cvData = {
     title: "Senior Full-Stack Developer",
     heroTagline: "Building fast, reliable web applications.",
     heroDescription:
-      "Full-Stack Developer with over 4 years of experience creating real-time web apps that solve real business problems.",
+      "Full Stack Developer with 4+ years building real-time web applications using Vue.js/ React.Js for frontend, Node.js/Rust for backend, PostgreSQL for database, Docker for deployment or development, and Socket.IO. ",
   },
 
   contacts: [
@@ -35,28 +35,34 @@ export const cvData = {
 
   skills: [
     {
-      name: "JavaScript",
-      color: "blue",
-      icon: "javascript",
-      group: "Frontend",
-    },
-    {
       name: "Vue.js",
       color: "blue",
       icon: "settings_input_component",
       group: "Frontend",
     },
-    { name: "TypeScript", color: "blue", icon: "terminal", group: "Frontend" },
     {
-      name: "Kotlin (Android)",
+      name: "React.js",
       color: "blue",
-      icon: "layers",
+      icon: "settings_input_component",
       group: "Frontend",
     },
-    { name: "Kotlin", color: "blue", icon: "layers", group: "Backend" },
+    {
+      name: "JavaScript",
+      color: "blue",
+      icon: "javascript",
+      group: "Frontend",
+    },
+    { name: "TypeScript", color: "blue", icon: "terminal", group: "Frontend" },
+    { name: "HTML & CSS", color: "gray", icon: "html", group: "Frontend" },
+
     { name: "Node.js", color: "blue", icon: "memory", group: "Backend" },
-    { name: "AdonisJS", color: "blue", icon: "network_node", group: "Backend" },
     { name: "Rust", color: "red", icon: "rocket_launch", group: "Backend" },
+    {
+      name: "PostgreSQL",
+      color: "green",
+      icon: "database",
+      group: "Databases",
+    },
     { name: "SQL", color: "green", icon: "database", group: "Databases" },
     {
       name: "Docker",
@@ -65,7 +71,6 @@ export const cvData = {
       group: "DevOps & Tools",
     },
     { name: "Git", color: "gray", icon: "fork_right", group: "DevOps & Tools" },
-    { name: "HTML & CSS", color: "gray", icon: "html", group: "Frontend" },
   ],
 
   summary:
@@ -78,11 +83,10 @@ export const cvData = {
       location: "Hybrid",
       period: "April 2022 - May 2026",
       responsibilities: [
-        "Full-Stack Development: Designed and implemented complete web applications from database schema design to responsive Vue.js frontend interfaces.",
-        "System Upgrades: Migrated legacy applications to modern tech stacks with comprehensive testing to ensure zero downtime during transitions.",
-        "Code Modernization: Refactored outdated codebases into maintainable, reusable component architectures improving performance and developer velocity.",
-        "Real-Time Features: Integrated Socket.IO for live data synchronization and instant updates in workspace collaboration tools.",
-        "Client Collaboration: Worked directly with stakeholders to translate business requirements into technical solutions with on-time delivery.",
+        "Designed and implemented full web applications across database schema design and Vue.js frontends, showing end-to-end ownership of delivery.",
+        "Migrated legacy applications to modern stacks and supported the transition with testing to maintain stability during release changes.",
+        "Built real-time synchronization features with Socket.IO to support live updates in collaboration tools, highlighting backend-event handling and frontend responsiveness.",
+        "Collaborated with stakeholders to translate requirements into technical solutions and deliver features on schedule.",
       ],
     },
   ],
